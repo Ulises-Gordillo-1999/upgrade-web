@@ -71,21 +71,21 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 ${
           scrolled
             ? 'bg-white/80 dark:bg-[#090a0f]/85 backdrop-blur-md border-b border-slate-200/80 dark:border-zinc-800/80 shadow-xs'
             : 'bg-transparent border-b border-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 w-full">
+          <div className="flex items-center justify-between h-16 sm:h-20 w-full gap-2">
             {/* Brand Logo */}
             <Link
               href="#hero"
-              className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-xl"
+              className="flex items-center gap-2 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-xl min-w-0 shrink"
               aria-label="UPGRADE - Inicio"
             >
-              <div className="relative flex items-center justify-center w-11 h-11 rounded-xl overflow-hidden border border-cyan-500/40 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow bg-[#090a0f]">
+              <div className="relative flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-xl overflow-hidden border border-cyan-500/40 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow bg-[#090a0f] shrink-0">
                 <Image
                   src="/logo_upgrade_solo.jpg"
                   alt="UPGRADE Isotipo"
@@ -95,14 +95,14 @@ export function Navbar() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col min-w-0">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                  <span className="text-base sm:text-xl font-extrabold tracking-tight text-slate-900 dark:text-white truncate">
                     UPGRADE
                   </span>
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
                 </div>
-                <span className="text-[10px] uppercase tracking-widest text-slate-500 dark:text-zinc-400 font-medium">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-slate-500 dark:text-zinc-400 font-medium truncate">
                   Informática & Seguridad
                 </span>
               </div>
@@ -122,7 +122,7 @@ export function Navbar() {
             </nav>
 
             {/* Desktop Right Actions */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3 shrink-0">
               <ThemeToggle />
               <a
                 href={whatsappUrl}
@@ -137,12 +137,12 @@ export function Navbar() {
             </div>
 
             {/* Mobile Actions & Hamburger */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden shrink-0">
               <ThemeToggle />
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="flex items-center justify-center min-w-[44px] min-h-[44px] rounded-xl border border-slate-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/80 text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-800/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+                className="flex items-center justify-center min-w-[40px] min-h-[40px] sm:min-w-[44px] sm:min-h-[44px] rounded-xl border border-slate-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/80 text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-800/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
                 aria-label="Abrir menú de navegación"
                 aria-expanded={mobileMenuOpen}
               >
@@ -164,8 +164,8 @@ export function Navbar() {
 
       {/* Mobile Off-Canvas Drawer */}
       <aside
-        className={`fixed top-0 bottom-0 right-0 z-50 w-80 max-w-[85vw] bg-white dark:bg-[#090a0f] border-l border-slate-200 dark:border-zinc-800/90 p-6 shadow-2xl lg:hidden transform transition-transform duration-300 ease-in-out flex flex-col justify-between ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 bottom-0 right-0 z-50 w-80 max-w-[85vw] bg-white dark:bg-[#090a0f] border-l border-slate-200 dark:border-zinc-800/90 p-6 shadow-2xl lg:hidden transform transition-all duration-300 ease-in-out flex flex-col justify-between ${
+          mobileMenuOpen ? 'translate-x-0 opacity-100 visible' : 'translate-x-full opacity-0 invisible pointer-events-none'
         }`}
         aria-label="Menú móvil de navegación"
       >

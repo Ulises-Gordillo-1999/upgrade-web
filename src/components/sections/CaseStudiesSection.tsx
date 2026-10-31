@@ -33,16 +33,16 @@ export function CaseStudiesSection() {
   return (
     <section 
       id="casos" 
-      className="py-20 md:py-28 relative scroll-mt-16"
+      className="py-16 sm:py-20 md:py-28 relative scroll-mt-16 overflow-hidden w-full max-w-full"
       aria-labelledby="cases-heading"
     >
       {/* Background Glow */}
       <div 
-        className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-blue-500/10 dark:bg-blue-500/10 blur-[140px] rounded-full pointer-events-none -z-10" 
+        className="absolute top-1/2 left-1/3 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] bg-blue-500/10 dark:bg-blue-500/10 blur-[100px] sm:blur-[140px] rounded-full pointer-events-none -z-10" 
         aria-hidden="true" 
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14">

@@ -9,9 +9,9 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-dvh flex flex-col bg-slate-50 dark:bg-[#090a0f] text-slate-900 dark:text-zinc-100 bg-tech-grid">
+    <div className="min-h-dvh flex flex-col bg-slate-50 dark:bg-[#090a0f] text-slate-900 dark:text-zinc-100 bg-tech-grid overflow-x-hidden w-full max-w-full">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         <HeroSection />
         <InfrastructureSection />
         <SoftwareSuitesSection />

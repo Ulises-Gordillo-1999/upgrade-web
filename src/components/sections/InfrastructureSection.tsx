@@ -24,16 +24,16 @@ export function InfrastructureSection() {
   return (
     <section 
       id="infraestructura" 
-      className="py-20 md:py-28 relative scroll-mt-16"
+      className="py-16 sm:py-20 md:py-28 relative scroll-mt-16 overflow-hidden w-full max-w-full"
       aria-labelledby="infrastructure-heading"
     >
       {/* Background Glow */}
       <div 
-        className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none -z-10" 
+        className="absolute top-1/2 left-0 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] bg-cyan-500/10 dark:bg-cyan-500/10 blur-[100px] sm:blur-[130px] rounded-full pointer-events-none -z-10" 
         aria-hidden="true" 
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">

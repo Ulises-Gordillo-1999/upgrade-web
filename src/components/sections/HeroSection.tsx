@@ -23,28 +23,28 @@ export function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden"
+      className="relative pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-36 md:pb-28 overflow-hidden w-full max-w-full"
       aria-label="Presentación de UPGRADE Soluciones Tecnológicas"
     >
       {/* Ambient Glows */}
       <div 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] md:w-[900px] md:h-[450px] bg-cyan-500/10 dark:bg-cyan-500/15 blur-[120px] rounded-full pointer-events-none -z-10" 
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[250px] sm:w-[600px] sm:h-[350px] md:w-[900px] md:h-[450px] bg-cyan-500/10 dark:bg-cyan-500/15 blur-[100px] sm:blur-[120px] rounded-full pointer-events-none -z-10" 
         aria-hidden="true" 
       />
       <div 
-        className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-blue-600/10 dark:bg-blue-600/15 blur-[100px] rounded-full pointer-events-none -z-10" 
+        className="absolute top-1/3 right-0 sm:right-10 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] bg-blue-600/10 dark:bg-blue-600/15 blur-[90px] sm:blur-[100px] rounded-full pointer-events-none -z-10" 
         aria-hidden="true" 
       />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Value Proposition */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          <div className="lg:col-span-7 flex flex-col items-start text-left w-full">
             
             {/* Live Availability Status Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-cyan-500/30 dark:border-cyan-500/20 bg-cyan-500/5 dark:bg-cyan-950/40 backdrop-blur-md mb-6 shadow-xs">
-              <span className="relative flex h-2.5 w-2.5">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-cyan-500/30 dark:border-cyan-500/20 bg-cyan-500/5 dark:bg-cyan-950/40 backdrop-blur-md mb-6 shadow-xs max-w-full">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
               </span>
@@ -54,7 +54,7 @@ export function HeroSection() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-6 break-words">
               Infraestructura tecnológica robusta y{' '}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-500 via-blue-500 to-indigo-500">
                 software a medida

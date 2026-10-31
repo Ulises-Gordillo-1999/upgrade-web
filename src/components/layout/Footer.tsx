@@ -30,7 +30,7 @@ export function Footer() {
 
   return (
     <footer 
-      className="border-t border-slate-200/80 dark:border-zinc-800/80 bg-white dark:bg-[#07080c] text-slate-700 dark:text-zinc-300 transition-colors"
+      className="border-t border-slate-200/80 dark:border-zinc-800/80 bg-white dark:bg-[#07080c] text-slate-700 dark:text-zinc-300 transition-colors overflow-hidden w-full max-w-full"
       aria-label="Pie de página institucional"
     >
       {/* Top Banner: Regional Coverage */}
