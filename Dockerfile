@@ -28,6 +28,7 @@ RUN npm run build
 
 # 3. Production runner stage
 FROM node:20-alpine AS runner
+RUN apk add --no-cache curl libc6-compat
 WORKDIR /app
 
 ENV NODE_ENV=production
