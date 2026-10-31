@@ -21,6 +21,7 @@ import {
   PhoneCall
 } from 'lucide-react';
 import { QuoteData, buildWhatsAppMessage, generateWhatsAppUrl } from '@/utils/whatsapp';
+import { PRIMARY_WHATSAPP, SECONDARY_WHATSAPP, WHATSAPP_CONTACTS, getWhatsAppUrl } from '@/config/contacts';
 
 const SERVICES = [
   { id: 'Cableado Estructurado & Racks Cat 6/FO', label: 'Cableado & Racks', icon: Server },
@@ -52,6 +53,7 @@ export function InteractiveQuoteSection() {
   const [company, setCompany] = useState('');
   const [location, setLocation] = useState('Catamarca');
   const [notes, setNotes] = useState('');
+  const [targetContact, setTargetContact] = useState<'ulises' | 'gabriel'>('ulises');
 
   const quoteData: QuoteData = {
     service,
@@ -64,7 +66,8 @@ export function InteractiveQuoteSection() {
   };
 
   const previewMessage = buildWhatsAppMessage(quoteData);
-  const whatsappUrl = generateWhatsAppUrl('5493834000000', quoteData);
+  const activePhone = targetContact === 'ulises' ? PRIMARY_WHATSAPP : SECONDARY_WHATSAPP;
+  const whatsappUrl = generateWhatsAppUrl(activePhone, quoteData);
 
   return (
     <section 
@@ -277,6 +280,39 @@ export function InteractiveQuoteSection() {
 
               {/* WhatsApp Action Button */}
               <div className="mt-6 space-y-3">
+                {/* Advisor Selector */}
+                <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-xs">
+                  <div className="text-[11px] text-slate-500 dark:text-zinc-400 font-semibold mb-1.5">
+                    Enviar cotización a:
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setTargetContact('ulises')}
+                      className={`p-2 rounded-lg text-left transition-all ${
+                        targetContact === 'ulises'
+                          ? 'bg-emerald-500 text-white font-bold shadow-xs'
+                          : 'bg-white/60 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300'
+                      }`}
+                    >
+                      <div className="text-xs">{WHATSAPP_CONTACTS.ulises.name}</div>
+                      <div className="text-[10px] opacity-80">{WHATSAPP_CONTACTS.ulises.display}</div>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setTargetContact('gabriel')}
+                      className={`p-2 rounded-lg text-left transition-all ${
+                        targetContact === 'gabriel'
+                          ? 'bg-emerald-500 text-white font-bold shadow-xs'
+                          : 'bg-white/60 dark:bg-zinc-800 text-slate-700 dark:text-zinc-300'
+                      }`}
+                    >
+                      <div className="text-xs">{WHATSAPP_CONTACTS.gabriel.name}</div>
+                      <div className="text-[10px] opacity-80">{WHATSAPP_CONTACTS.gabriel.display}</div>
+                    </button>
+                  </div>
+                </div>
+
                 <a
                   href={whatsappUrl}
                   target="_blank"
@@ -284,7 +320,7 @@ export function InteractiveQuoteSection() {
                   className="flex items-center justify-center gap-2.5 w-full px-6 py-4 rounded-2xl text-base font-bold text-white bg-linear-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:via-teal-500 hover:to-emerald-400 shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] min-h-[52px]"
                 >
                   <Send className="w-5 h-5" />
-                  <span>Enviar Cotización por WhatsApp</span>
+                  <span>Enviar Cotización a {targetContact === 'ulises' ? 'Ulises' : 'Gabriel'}</span>
                 </a>
 
                 <div className="text-center text-[11px] text-slate-500 dark:text-zinc-400">
@@ -306,7 +342,7 @@ export function InteractiveQuoteSection() {
                 </div>
               </div>
               <a
-                href="https://wa.me/5493834000000?text=Hola%20UPGRADE,%20deseo%20agendar%20una%20llamada%20o%20visita%20t%C3%A9cnica."
+                href={getWhatsAppUrl("Hola UPGRADE, deseo agendar una llamada o visita técnica.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-2 rounded-xl text-blue-600 dark:text-cyan-400 hover:bg-blue-50 dark:hover:bg-zinc-800 font-semibold transition-colors shrink-0"

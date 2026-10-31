@@ -15,9 +15,10 @@ import {
   Sparkles,
   Layers
 } from 'lucide-react';
+import { getWhatsAppUrl } from '@/config/contacts';
 
 export function HeroSection() {
-  const whatsappUrl = "https://wa.me/5493834000000?text=Hola%20UPGRADE,%20deseo%20asesoramiento%20t%C3%A9cnico%20e%20infraestructura.";
+  const whatsappUrl = getWhatsAppUrl("Hola UPGRADE, deseo asesoramiento técnico e infraestructura.");
 
   return (
     <section 

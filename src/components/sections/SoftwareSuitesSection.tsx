@@ -18,15 +18,13 @@ import {
   Zap,
   BarChart3
 } from 'lucide-react';
+import { getWhatsAppUrl } from '@/config/contacts';
 
 export function SoftwareSuitesSection() {
   const [demoOpen, setDemoOpen] = useState(false);
 
   const getWhatsAppProductLink = (productName: string) => {
-    const text = encodeURIComponent(
-      `Hola UPGRADE, me interesa conocer más y cotizar: ${productName}.`
-    );
-    return `https://wa.me/5493834000000?text=${text}`;
+    return getWhatsAppUrl(`Hola UPGRADE, me interesa conocer más y cotizar: ${productName}.`);
   };
 
   return (

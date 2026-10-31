@@ -17,13 +17,11 @@ import {
   MessageSquare,
   BadgeCheck
 } from 'lucide-react';
+import { getWhatsAppUrl } from '@/config/contacts';
 
 export function TechnicalSupportSection() {
   const getWhatsAppPlanLink = (planName: string) => {
-    const text = encodeURIComponent(
-      `Hola UPGRADE, deseo cotizar el abono de soporte técnico: ${planName} para mi empresa.`
-    );
-    return `https://wa.me/5493834000000?text=${text}`;
+    return getWhatsAppUrl(`Hola UPGRADE, deseo cotizar el abono de soporte técnico: ${planName} para mi empresa.`);
   };
 
   return (

@@ -19,6 +19,7 @@ import {
   Calculator
 } from 'lucide-react';
 import { NAV_LINKS } from './Navbar';
+import { WHATSAPP_CONTACTS, getWhatsAppUrl } from '@/config/contacts';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -88,7 +89,7 @@ export function Footer() {
 
             <div className="pt-2">
               <a
-                href="https://wa.me/5493834000000?text=Hola%20UPGRADE,%20deseo%20comunicarme%20con%20el%20equipo."
+                href={getWhatsAppUrl("Hola UPGRADE, deseo comunicarme con el equipo técnico y comercial.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-linear-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 shadow-md shadow-emerald-500/20 transition-all min-h-[44px]"
@@ -184,14 +185,34 @@ export function Footer() {
                 <span>San Fernando del Valle de Catamarca, Argentina (CP 4700)</span>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-blue-500 shrink-0" />
-                <span>Mesa Técnica: +54 (383) 400-0000</span>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                  <a 
+                    href={`https://wa.me/${WHATSAPP_CONTACTS.ulises.international}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-500 transition-colors"
+                  >
+                    Ulises: <span className="font-semibold">{WHATSAPP_CONTACTS.ulises.display}</span>
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <a 
+                    href={`https://wa.me/${WHATSAPP_CONTACTS.gabriel.international}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-emerald-500 transition-colors"
+                  >
+                    Gabriel: <span className="font-semibold">{WHATSAPP_CONTACTS.gabriel.display}</span>
+                  </a>
+                </div>
               </div>
 
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>contacto@upgrade-tech.com.ar</span>
+                <span>contacto@upgrade-informatica.com</span>
               </div>
 
               <div className="pt-2">

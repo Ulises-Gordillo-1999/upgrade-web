@@ -17,6 +17,7 @@ import {
   ExternalLink,
   MessageSquare
 } from 'lucide-react';
+import { getWhatsAppUrl } from '@/config/contacts';
 
 export function CaseStudiesSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -26,10 +27,7 @@ export function CaseStudiesSection() {
     : CASE_STUDIES.filter((c) => c.category === selectedCategory);
 
   const getWhatsAppCaseInquiry = (title: string) => {
-    const text = encodeURIComponent(
-      `Hola UPGRADE, vi el caso de éxito "${title}" y me gustaría consultar por una solución similar para mi empresa.`
-    );
-    return `https://wa.me/5493834000000?text=${text}`;
+    return getWhatsAppUrl(`Hola UPGRADE, vi el caso de éxito "${title}" y me gustaría consultar por una solución similar para mi empresa.`);
   };
 
   return (

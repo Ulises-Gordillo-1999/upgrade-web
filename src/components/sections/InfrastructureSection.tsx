@@ -14,13 +14,11 @@ import {
   Cable,
   Cpu
 } from 'lucide-react';
+import { getWhatsAppUrl } from '@/config/contacts';
 
 export function InfrastructureSection() {
   const getWhatsAppServiceLink = (serviceName: string) => {
-    const text = encodeURIComponent(
-      `Hola UPGRADE, me interesa solicitar un relevamiento técnico para: ${serviceName}.`
-    );
-    return `https://wa.me/5493834000000?text=${text}`;
+    return getWhatsAppUrl(`Hola UPGRADE, me interesa solicitar un relevamiento técnico para: ${serviceName}.`);
   };
 
   return (
@@ -143,7 +141,7 @@ export function InfrastructureSection() {
           </div>
 
           <a
-            href="https://wa.me/5493834000000?text=Hola%20UPGRADE,%20deseo%20coordinar%20un%20relevamiento%20de%20infraestructura%20en%20nuestro%20establecimiento."
+            href={getWhatsAppUrl("Hola UPGRADE, deseo coordinar un relevamiento de infraestructura en nuestro establecimiento.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-linear-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-md shadow-cyan-500/20 transition-all duration-200 shrink-0 min-h-[48px] w-full md:w-auto"

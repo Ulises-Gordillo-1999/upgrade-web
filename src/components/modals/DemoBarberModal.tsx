@@ -17,6 +17,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { BARBER_DEMO_TABS } from '@/data/softwareData';
+import { getWhatsAppUrl } from '@/config/contacts';
 
 interface DemoBarberModalProps {
   isOpen: boolean;
@@ -57,9 +58,9 @@ export function DemoBarberModal({ isOpen, onClose }: DemoBarberModalProps) {
   if (!mounted || !isOpen) return null;
 
   const currentTabData = BARBER_DEMO_TABS.find((t) => t.id === activeTab) || BARBER_DEMO_TABS[0];
-  const whatsappDemoUrl = `https://wa.me/5493834000000?text=${encodeURIComponent(
+  const whatsappDemoUrl = getWhatsAppUrl(
     'Hola UPGRADE, quiero agendar una demostración en vivo de UPGRADE Barber OS para mi barbería.'
-  )}`;
+  );
 
   return createPortal(
     <div 

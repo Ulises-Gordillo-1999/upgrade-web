@@ -16,6 +16,7 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { getWhatsAppUrl } from '@/config/contacts';
 
 export const NAV_LINKS = [
   { href: '#infraestructura', label: 'Infraestructura IT', icon: Server },
@@ -65,7 +66,7 @@ export function Navbar() {
     setMobileMenuOpen(false);
   };
 
-  const whatsappUrl = "https://wa.me/5493834000000?text=Hola%20UPGRADE,%20deseo%20consultar%20por%20servicios%20tecnol%C3%B3gicos.";
+  const whatsappUrl = getWhatsAppUrl("Hola UPGRADE, deseo consultar por servicios tecnológicos.");
 
   return (
     <>
