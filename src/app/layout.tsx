@@ -51,8 +51,13 @@ export const metadata: Metadata = {
   creator: "UPGRADE Informática",
   publisher: "UPGRADE",
   icons: {
-    icon: "/logo_upgrade_solo.jpg",
-    apple: "/logo_upgrade_solo.jpg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   robots: {
     index: true,
