@@ -83,6 +83,16 @@ Construcción desde cero del sitio web oficial corporativo y comercial de **UPGR
 - [x] Dockerfile compila correctamente y el contenedor expone el servicio en puerto 3000.
 - [x] Listo para despliegue en Coolify v4 sobre VPS Hetzner.
 
+### Phase 5: SEO Técnico, Datos Estructurados JSON-LD & Indexación en Google
+- [x] Task 13: Generación de Sitemap dinámico (`src/app/sitemap.ts`) y Robots (`src/app/robots.ts`)
+- [x] Task 14: Implementación de Datos Estructurados JSON-LD (Schema.org) para LocalBusiness & Rich Results
+- [x] Task 15: Optimización de Geo-Metadatos de Catamarca/NOA y Verificación de Indexabilidad
+
+### Checkpoint: SEO & Google Indexation Ready
+- [x] `/sitemap.xml` y `/robots.txt` responden correctamente con tipos de contenido XML y texto plano.
+- [x] Datos estructurados Schema.org validados sin errores de sintaxis ni campos requeridos faltantes.
+- [x] Build limpio con Turbopack y listo para envío a Google Search Console.
+
 ---
 
 ## Risks and Mitigations

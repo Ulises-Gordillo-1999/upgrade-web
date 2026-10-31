@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +51,15 @@ export const metadata: Metadata = {
   authors: [{ name: "UPGRADE Informática y Seguridad", url: "https://upgrade-informatica.com" }],
   creator: "UPGRADE Informática",
   publisher: "UPGRADE",
+  alternates: {
+    canonical: "https://upgrade-informatica.com",
+  },
+  other: {
+    "geo.region": "AR-K",
+    "geo.placename": "San Fernando del Valle de Catamarca",
+    "geo.position": "-28.4696;-65.7852",
+    "ICBM": "-28.4696, -65.7852",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -104,6 +114,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning className="scroll-smooth">
       <head>
+        <JsonLd />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -323,3 +323,76 @@
 - [x] Todos los checkpoints previos superados.
 - [x] Aplicación lista para despliegue directo en Coolify v4 sobre VPS Hetzner.
 
+---
+
+## Task 13: Generación de Sitemap dinámico (`src/app/sitemap.ts`) y Robots (`src/app/robots.ts`)
+
+**Description:** Crear las rutas de convención de Next.js App Router `src/app/sitemap.ts` y `src/app/robots.ts` para generar automáticamente `/sitemap.xml` y `/robots.txt`. Vincular la URL canónica `https://upgrade-informatica.com`, prioridades, frecuencias de actualización y reglas de rastreo para bots de búsqueda.
+
+**Acceptance criteria:**
+- [x] `sitemap.ts` exporta la función por defecto que retorna el array de URLs del sitio con fecha actualizada, `changeFrequency: 'weekly'` y `priority: 1.0`.
+- [x] `robots.ts` permite indexación general (`allow: '/'`), restringe rutas internas (`disallow: '/api/'`) e incluye la referencia directa a `https://upgrade-informatica.com/sitemap.xml`.
+- [x] Ambos endpoints son generados estáticamente por Next.js en tiempo de build.
+
+**Verification:**
+- [x] Compilación exitosa de `/sitemap.xml` y `/robots.txt` con `npm run build`.
+
+**Dependencies:** Task 12
+
+**Files likely touched:**
+- `src/app/sitemap.ts`
+- `src/app/robots.ts`
+
+**Estimated scope:** Small: 2 files
+
+---
+
+## Task 14: Implementación de Datos Estructurados JSON-LD (Schema.org) para LocalBusiness & Rich Results
+
+**Description:** Crear el componente de datos estructurados Schema.org (`LocalBusiness` / `ProfessionalService`) para Google Knowledge Graph y Google Maps/Local Pack. Incluir datos de la empresa (UPGRADE Informática y Seguridad), teléfonos de contacto de Ulises y Gabriel, geo-coordenadas de Catamarca (-28.4696, -65.7852), horarios de atención, guardia 24/7 y catálogo de servicios detallado (`hasOfferCatalog`).
+
+**Acceptance criteria:**
+- [x] Componente `JsonLd` implementado con tipado TypeScript y serialización JSON válida.
+- [x] Esquema `ProfessionalService` con atributos obligatorios de Google (nombre, imagen, teléfono, dirección, coordenadas, horario, catálogo de servicios).
+- [x] Inyección en el `<head>` de `src/app/layout.tsx` sin impactar el rendimiento de hidratación.
+
+**Verification:**
+- [x] Validación de la estructura JSON en build y chequeo de sintaxis.
+
+**Dependencies:** Task 13
+
+**Files likely touched:**
+- `src/components/seo/JsonLd.tsx`
+- `src/app/layout.tsx`
+
+**Estimated scope:** Small: 2 files
+
+---
+
+## Task 15: Optimización de Geo-Metadatos de Catamarca/NOA y Verificación de Indexabilidad
+
+**Description:** Configurar en `src/app/layout.tsx` las metaetiquetas geográficas regionales (`geo.region`, `geo.placename`, `geo.position`, `ICBM`) para potenciar el SEO local en búsquedas orgánicas desde Catamarca y provincias del NOA. Ejecutar build final y preparar instrucciones de alta en Google Search Console.
+
+**Acceptance criteria:**
+- [x] Metaetiquetas geográficas integradas en los metadatos de Next.js.
+- [x] `npm run build` compila con 0 errores y genera las rutas estáticas de SEO.
+- [x] Commit y push sincronizado con el repositorio GitHub.
+
+**Verification:**
+- [x] `npx tsc --noEmit` sin errores.
+- [x] `npm run build` genera `/sitemap.xml` y `/robots.txt`.
+
+**Dependencies:** Task 14
+
+**Files likely touched:**
+- `src/app/layout.tsx`
+
+**Estimated scope:** Small: 1 file
+
+---
+
+## Checkpoint: SEO & Google Indexation Ready
+- [x] `/sitemap.xml` y `/robots.txt` compilados y accesibles.
+- [x] JSON-LD estructurado presente en el HTML generado.
+- [x] Código desplegado y listo para vincular en Google Search Console.
+
