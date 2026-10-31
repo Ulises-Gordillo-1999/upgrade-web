@@ -185,7 +185,7 @@ export function Footer() {
                 <span>San Fernando del Valle de Catamarca, Argentina (CP 4700)</span>
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-blue-500 shrink-0" />
                   <a 
@@ -194,7 +194,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="hover:text-cyan-500 transition-colors"
                   >
-                    Ulises: <span className="font-semibold">{WHATSAPP_CONTACTS.ulises.display}</span>
+                    Ulises Gordillo: <span className="font-semibold">{WHATSAPP_CONTACTS.ulises.display}</span>
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
@@ -205,7 +205,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="hover:text-emerald-500 transition-colors"
                   >
-                    Gabriel: <span className="font-semibold">{WHATSAPP_CONTACTS.gabriel.display}</span>
+                    Gabriel Estani: <span className="font-semibold">{WHATSAPP_CONTACTS.gabriel.display}</span>
                   </a>
                 </div>
               </div>

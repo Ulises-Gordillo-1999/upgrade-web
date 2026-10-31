@@ -7,7 +7,7 @@ export const WHATSAPP_CONTACTS = {
     role: 'Dirección Técnica & Proyectos',
   },
   gabriel: {
-    name: 'Gabriel',
+    name: 'Gabriel Estani',
     phone: '3834238349',
     international: '5493834238349',
     display: '+54 9 (383) 423-8349',
@@ -22,3 +22,4 @@ export function getWhatsAppUrl(text: string, target: 'ulises' | 'gabriel' = 'uli
   const number = target === 'ulises' ? PRIMARY_WHATSAPP : SECONDARY_WHATSAPP;
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }
+

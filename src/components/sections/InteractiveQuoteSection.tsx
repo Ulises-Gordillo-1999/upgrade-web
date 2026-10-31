@@ -320,7 +320,7 @@ export function InteractiveQuoteSection() {
                   className="flex items-center justify-center gap-2.5 w-full px-6 py-4 rounded-2xl text-base font-bold text-white bg-linear-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:via-teal-500 hover:to-emerald-400 shadow-xl shadow-emerald-500/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] min-h-[52px]"
                 >
                   <Send className="w-5 h-5" />
-                  <span>Enviar Cotización a {targetContact === 'ulises' ? 'Ulises' : 'Gabriel'}</span>
+                  <span>Enviar Cotización a {targetContact === 'ulises' ? 'Ulises Gordillo' : 'Gabriel Estani'}</span>
                 </a>
 
                 <div className="text-center text-[11px] text-slate-500 dark:text-zinc-400">
