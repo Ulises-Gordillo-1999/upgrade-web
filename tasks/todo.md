@@ -396,3 +396,98 @@
 - [x] JSON-LD estructurado presente en el HTML generado.
 - [x] Código desplegado y listo para vincular en Google Search Console.
 
+---
+
+## Task 16: Generación de Assets PWA (Iconos 192x192, 512x512 y Maskable con Safe Area)
+
+**Description:** Generar mediante Sharp los iconos PNG requeridos por el estándar PWA y especificación de Chrome/Android Web App: `icon-192.png`, `icon-512.png` y `icon-maskable-512.png` (con padding seguro del 20% para evitar cortes por mascaras redondeadas de Android) a partir del logo oficial de UPGRADE.
+
+**Acceptance criteria:**
+- [x] Iconos de resolución exacta `192x192` y `512x512` generados en `public/icons/`.
+- [x] Icono maskable generado con fondo `#090a0f` y zona segura de visualización.
+- [x] Optimización de compresión PNG sin pérdida de fidelidad visual.
+
+**Verification:**
+- [x] Comprobación de dimensiones de archivo con Node/Sharp.
+- [x] Accesibles vía HTTP en `/icons/icon-192.png` y `/icons/icon-512.png`.
+
+**Dependencies:** Checkpoint SEO
+**Files likely touched:**
+- `public/icons/icon-192.png`
+- `public/icons/icon-512.png`
+- `public/icons/icon-maskable-512.png`
+
+**Estimated scope:** Small: 1 script / 3 assets
+
+---
+
+## Task 17: Configuración de Web App Manifest dinámico (`src/app/manifest.ts`)
+
+**Description:** Implementar la ruta de metadatos de Next.js `src/app/manifest.ts` exportando `default function manifest(): MetadataRoute.Manifest`. Definir nombre completo, nombre corto "UPGRADE", descripción corporativa, colores de tema y fondo (`#090a0f`), modo de visualización `standalone`, orientación de pantalla y el array completo de iconos con sus propósitos (`any`, `maskable`).
+
+**Acceptance criteria:**
+- [x] `src/app/manifest.ts` implementado con tipado estricto `MetadataRoute.Manifest`.
+- [x] Rutas de iconos mapeadas con tamaños y mime types correctos.
+- [x] Generación automática de la ruta `/manifest.webmanifest`.
+
+**Verification:**
+- [x] `npm run build` compila con éxito la ruta estática `/manifest.webmanifest`.
+
+**Dependencies:** Task 16
+**Files likely touched:**
+- `src/app/manifest.ts`
+
+**Estimated scope:** Small: 1 file
+
+---
+
+## Task 18: Metadatos extendidos para Apple iOS Web App y Viewport Standalone en `src/app/layout.tsx`
+
+**Description:** Configurar en `metadata` de `src/app/layout.tsx` el soporte para iOS Web Apps: `appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'UPGRADE' }`, `applicationName: 'UPGRADE'`, y metaetiquetas de control móvil para evitar barras blancas en modo standalone en dispositivos Apple.
+
+**Acceptance criteria:**
+- [x] `appleWebApp` configurado correctamente en los metadatos exportados.
+- [x] Enlace al icono de Apple táctil (`/apple-icon.png`) verificado.
+- [x] Compatibilidad total con modo oscuro y modo claro del sistema operativo móvil.
+
+**Verification:**
+- [x] `npx tsc --noEmit` sin errores de tipo.
+- [x] Build exitoso.
+
+**Dependencies:** Task 17
+**Files likely touched:**
+- `src/app/layout.tsx`
+
+**Estimated scope:** Small: 1 file
+
+---
+
+## Task 19: Componente interactivo y accesible de Instalación PWA en Navegación Móvil (`InstallPrompt`)
+
+**Description:** Diseñar e integrar un disparador de instalación no intrusivo en el menú móvil off-canvas (`MobileNav.tsx`) que capture el evento del navegador `beforeinstallprompt` (Android/Chrome/Edge) y brinde instrucciones directas si el usuario se encuentra en iOS Safari ("Compartir > Agregar al inicio"). Cumple con accesibilidad WCAG AA, tamaño táctil $\ge 44$px y diseño armónico con la estética Enterprise Tech de UPGRADE.
+
+**Acceptance criteria:**
+- [x] El botón se presenta de forma limpia en el drawer móvil sin bloquear el flujo principal de navegación.
+- [x] Al hacer clic en navegadores compatibles, ejecuta `prompt()` nativo para instalar la app.
+- [x] En iOS, despliega un tooltip accesible guiando el guardado en pantalla de inicio.
+- [x] Cumple con `frontend-ui-engineering`: sin parpadeos, feedback táctil inmediato y soporte modo oscuro.
+
+**Verification:**
+- [x] Prueba de componentes en viewport móvil.
+- [x] `npm run build` sin errores.
+
+**Dependencies:** Task 18
+**Files likely touched:**
+- `src/components/pwa/InstallPwaButton.tsx`
+- `src/components/layout/Navbar.tsx`
+
+**Estimated scope:** Small: 2 files
+
+---
+
+## Checkpoint: PWA Installation Ready
+- [x] `/manifest.webmanifest` se genera estáticamente con HTTP 200 y tipos correctos.
+- [x] Iconos PWA estándar y maskable accesibles en `public/icons/`.
+- [x] Experiencia de instalación disponible en Android y Safari iOS sin interferir en la navegación estándar.
+- [x] `npm run build` compila con 0 errores y despliegue sincronizado en producción.
+

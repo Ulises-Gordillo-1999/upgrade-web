@@ -93,6 +93,18 @@ Construcción desde cero del sitio web oficial corporativo y comercial de **UPGR
 - [x] Datos estructurados Schema.org validados sin errores de sintaxis ni campos requeridos faltantes.
 - [x] Build limpio con Turbopack y listo para envío a Google Search Console.
 
+### Phase 6: PWA (Progressive Web App) & Web App Manifest
+- [x] Task 16: Generación de Assets PWA (Iconos 192x192, 512x512 y Maskable con Safe Area)
+- [x] Task 17: Configuración de Web App Manifest dinámico (`src/app/manifest.ts`)
+- [x] Task 18: Metadatos extendidos para Apple iOS Web App y Viewport Standalone en `src/app/layout.tsx`
+- [x] Task 19: Componente interactivo y accesible de Instalación PWA en Navegación Móvil (`InstallPrompt`)
+
+### Checkpoint: PWA Installation Ready
+- [x] `/manifest.webmanifest` se genera estáticamente con HTTP 200 y tipos correctos.
+- [x] Iconos PWA estándar y maskable accesibles en `public/icons/`.
+- [x] Experiencia de instalación disponible en Android y Safari iOS sin interferir en la navegación estándar.
+- [x] `npm run build` compila con 0 errores y despliegue sincronizado en producción.
+
 ---
 
 ## Risks and Mitigations

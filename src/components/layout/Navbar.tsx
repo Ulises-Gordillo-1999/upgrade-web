@@ -16,6 +16,7 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { InstallPwaButton } from '@/components/pwa/InstallPwaButton';
 import { getWhatsAppUrl } from '@/config/contacts';
 
 export const NAV_LINKS = [
@@ -224,8 +225,10 @@ export function Navbar() {
         </div>
 
         {/* Drawer Footer Actions */}
-        <div className="pt-6 border-t border-slate-100 dark:border-zinc-800/80 space-y-3">
-          <div className="flex items-center justify-between text-xs text-slate-500 dark:text-zinc-400 px-1">
+        <div className="pt-5 border-t border-slate-100 dark:border-zinc-800/80 space-y-3">
+          <InstallPwaButton />
+
+          <div className="flex items-center justify-between text-xs text-slate-500 dark:text-zinc-400 px-1 pt-1">
             <span>Preferencia de tema</span>
             <ThemeToggle />
           </div>

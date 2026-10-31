@@ -27,6 +27,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://upgrade-informatica.com"),
+  applicationName: "UPGRADE",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "UPGRADE",
+  },
+  formatDetection: {
+    telephone: false,
+  },
   title: "UPGRADE | Informática, Infraestructura IT & Soluciones de Software",
   description:
     "Especialistas en cableado estructurado Cat 6/FO, redes Wi-Fi de alta densidad (MikroTik/UniFi), servidores, videovigilancia CCTV 4K, soporte corporativo y software sectorial (Barber OS, ERP) en Catamarca y NOA.",
