@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-ui-engineering": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-ui-engineering/SKILL.md",
+      "computedHash": "22ee43d0367d2c3f611585eead5f0c413bcefa947da34b25a4935726ed76533e"
+    },
+    "new-app-scaffolding": {
+      "source": "Ulises-Gordillo-1999/template-coolify-nextjs",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/new-app-scaffolding/SKILL.md",
+      "computedHash": "9469a3ab76523dee96d6ac50dd784dc66e4b8a2faec7ffbf994b68e2ace6b141"
+    },
+    "planning-and-task-breakdown": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/planning-and-task-breakdown/SKILL.md",
+      "computedHash": "0dc14a1402cdabd376f2d81d2225fcb4a18ee63d58b945ff83affeb024285b8f"
+    },
+    "responsive-design": {
+      "source": "Ulises-Gordillo-1999/template-coolify-nextjs",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/responsive-design/SKILL.md",
+      "computedHash": "5a2b7d75e0ed1525947a57b6a47003081c841ed85733562f73796ecd5b8d57aa"
+    },
+    "semver-version-control": {
+      "source": "Ulises-Gordillo-1999/template-coolify-nextjs",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/semver-version-control/SKILL.md",
+      "computedHash": "862b552635372fdf656d660154e88189ead993f282d02a479d1db9d719d688f5"
+    },
+    "theme-mode-system": {
+      "source": "Ulises-Gordillo-1999/template-coolify-nextjs",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/theme-mode-system/SKILL.md",
+      "computedHash": "1338d1ca624a59061c13f6aa9649d01d9fd77064a35cd06157bbe98fe4774bcd"
+    }
+  }
+}
